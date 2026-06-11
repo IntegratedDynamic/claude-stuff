@@ -58,12 +58,13 @@ Map the OpenSpec artifacts into one self-contained issue body:
 - **Tasks** ← `tasks.md` as a `- [ ]` checklist.
 - **Target repo** + constraints (e.g. "never `apply`/`destroy` without approval"; "merging to gitops `main` deploys to a live cluster").
 
-**Show the rendered issue body to the human and get a yes before filing** — creating an issue is an outward action. Title: Conventional-Commits style — `<type>: <description>`. File in the target repo, routed with an `agent:<name>` label matching the executor (today `agent:devops`):
+**Show the rendered issue body to the human and get a yes before filing** — creating an issue is an outward action. Title: Conventional-Commits style — `<type>: <description>`. File in the target repo. **Every PO-authored issue MUST carry the `ai-generated` label** (it was machine-drafted), plus a `spec` label and an `agent:<name>` routing label matching the executor (today `agent:devops`):
 
 ```bash
+gh label create ai-generated --repo IntegratedDynamic/<repo> --color ededed --description "Drafted by an AI agent" 2>/dev/null || true
 gh label create agent:devops --repo IntegratedDynamic/<repo> --color 0e8a16 --description "For the devops dev agent" 2>/dev/null || true
 gh label create spec --repo IntegratedDynamic/<repo> --color 5319e7 --description "PO-authored spec" 2>/dev/null || true
-gh issue create --repo IntegratedDynamic/<repo> --title "<type>: ..." --label agent:devops --label spec --body-file <file>
+gh issue create --repo IntegratedDynamic/<repo> --title "<type>: ..." --label ai-generated --label spec --label agent:devops --body-file <file>
 ```
 
 ## Working rules
