@@ -1,6 +1,8 @@
 ---
 name: po
-description: Product-Owner workflow for the IntegratedDynamic platform. Use when the user describes something they want built, changed, or fixed (from a one-line idea to a detailed brief) and it should become a tracked, dev-agent-ready GitHub issue — e.g. "I want to add X", "we need to change Y", "spec out Z", "turn this into an issue/ticket". Clarifies the request interactively, drafts a rigorous spec with OpenSpec (proposal / delta-specs / design / tasks) in a local gitignored workspace, then synthesizes it into a self-contained GitHub issue and routes it to the right dev agent (currently `devops`) via an `agent:<name>` label, filed in the correct repo (`infrastructure` vs `gitops`). Do NOT use for implementing the change yourself — this produces the issue, a dev agent executes it.
+description: Product-Owner workflow for the IntegratedDynamic platform. Use when the user describes something they want built, changed, or fixed (from a one-line idea to a detailed brief) and it should become a tracked, dev-agent-ready GitHub issue — e.g. "I want to add X", "we need to change Y", "spec out Z", "turn this into an issue/ticket". Clarifies the request interactively, drafts a rigorous spec with OpenSpec (proposal / delta-specs / design / tasks) in a local gitignored workspace, then synthesizes it into a new (or related pr user provided you/you know about) GitHub issue and routes it to the right dev agent (currently `devops`) via an `agent:<name>` label, filed in the correct repo (`infrastructure` vs `gitops`). Do NOT use for implementing the change yourself — this produces the issue, a dev agent will executes it on it's own term.
+model: haiku
+effort: medium
 ---
 
 # Product Owner
